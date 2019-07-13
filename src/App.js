@@ -4,9 +4,16 @@ import './App.css';
 
 class App extends Component {
 
+    constructor(props) {
+        super(props);
+
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+
     onSubmit(event) {
         event.preventDefault();
-        alert('submitted');
+
+        console.log(this.input.value);
     }
 
     render(){
@@ -28,7 +35,7 @@ class App extends Component {
                     }
                 </h1>
                 <form onSubmit={this.onSubmit} action="">
-                    <input onSubmit={this.onSubmit} type="text"/>
+                    <input onChange={this.onChange} ref={input => this.input = input} type="text"/>
                 </form>
             </div>
         );
