@@ -4,8 +4,9 @@ import './App.css';
 
 class App extends Component {
 
-    onChange(event) {
-        console.log(event.target.value);
+    onSubmit(event) {
+        event.preventDefault();
+        alert('submitted');
     }
 
     render(){
@@ -26,8 +27,9 @@ class App extends Component {
                         })
                     }
                 </h1>
-
-                <input onChange={this.onChange} type="text"/>
+                <form onSubmit={this.onSubmit} action="">
+                    <input onSubmit={this.onSubmit} type="text"/>
+                </form>
             </div>
         );
     }
