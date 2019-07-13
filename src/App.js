@@ -3,9 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-    onMouseEnter() {
-        alert('clicked');
-    }
 
     onChange(event) {
         console.log(event.target.value);
@@ -24,7 +21,7 @@ class App extends Component {
                     {
                         list.map(item => {
                             return (
-                                <div key={item} onMouseEnter={this.onMouseEnter}>{item}</div>
+                                <div key={item} onChange={this.onChange}>{item}</div>
                             );
                         })
                     }
