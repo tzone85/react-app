@@ -3,8 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-    onClick() {
+    onMouseEnter() {
         alert('clicked');
+    }
+
+    onChange(event) {
+        console.log(event.target.value);
     }
 
     render(){
@@ -20,11 +24,13 @@ class App extends Component {
                     {
                         list.map(item => {
                             return (
-                                <div onClick={this.onClick}>{item}</div>
+                                <div key={item} onMouseEnter={this.onMouseEnter}>{item}</div>
                             );
                         })
                     }
                 </h1>
+
+                <input onChange={this.onChange} type="text"/>
             </div>
         );
     }
